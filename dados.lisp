@@ -17,6 +17,7 @@
 (setf setubal (make-cidade 'setubal nil nil nil))
 (setf porto (make-cidade 'porto nil nil nil))
 (setf v-real (make-cidade 'v-real nil nil nil))
+(setf viana (make-cidade 'viana nil nil nil))
 
 (setf grafo 
 	(list 
@@ -39,8 +40,9 @@
 		(list setubal (make-cidade 'lisboa setubal 50 0) (make-cidade 'beja setubal 142 0) (make-cidade 'faro setubal 249 0))
 		(list porto (make-cidade 'v-castelo porto 71 0) (make-cidade 'v-real porto 116 0) (make-cidade 'viseu porto 133 0))
 		(list v-real (make-cidade 'viseu v-real 110 0))
+		(list viana (make-cidade 'braga viana 48 0))
 	)
-)	
+)
 
 (setf heuristica-faro
 	(list
@@ -63,5 +65,6 @@
 		(list lisboa 195)
 		(list setubal 168)
 		(list porto 418)
+		(list viana 494)
 	)
 )

@@ -74,7 +74,7 @@
 (defun print-frontier (frontier)
 	(format t "( ")
 	(dolist (i frontier)
-		(format t " ~a ~a" (city-state i) (city-fn i))
+		(format t " ~a ~a" (city-state i) (city-gn i))
 	)
 	(format t ") ~%~%")
 )

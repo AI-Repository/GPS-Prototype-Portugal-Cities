@@ -28,6 +28,7 @@
 
 (defun UCS (start)
 	(let ((frontier (successors start)) (node nil) (expanded nil))
+		(setf expanded (cons start expanded))
 		(loop while (> (length frontier) 0)
 			;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 			;retirar fila e actualizar fronteira
@@ -35,7 +36,7 @@
 				(sort frontier (function max-cities-gn))
 				(setf node (remove-node frontier))
 				(setf frontier (update-frontier frontier))
-				(setf expanded (cons start expanded))
+
 				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
 				;se for objectivo
 				(if (goal node)
@@ -44,9 +45,11 @@
 					;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 					;expandir no filho
 					(progn 
-						;(format t "Ordem Expansao: ~a dist: ~a ~%" (city-state node) (city-fn node))
+						;(format t "Ordem Expansao: ~a dist: ~a ~%" (city-state node) (city-gn node))
 						(setf expanded (cons node expanded))
 						(setf frontier (append frontier (insert-new-nodes (append frontier expanded) node)))
+
+						;(sort frontier (function max-cities-gn))
 						;(print-frontier frontier)
 					)
 				)
@@ -172,7 +175,7 @@
 						;(format t "Expansion: ~a gn: ~a hn: ~a fn: ~a ~%" (city-state node) (city-gn node) (city-hn node) (city-fn node))
 						(setf expanded (cons node expanded))
 						(setf frontier (append frontier (insert-new-nodes (append frontier expanded) node)))
-						(print-frontier frontier)
+						;(print-frontier frontier)
 					)
 				)
 			)
