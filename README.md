@@ -8,3 +8,5 @@ Many search algoritms were developed like BFS, IDA* and HillClimbing.
 The heuristic information is targeted to the city of Faro.
 
 ![alt tag](https://cloud.githubusercontent.com/assets/6472330/6086170/9436cc6a-ae37-11e4-91ed-7d1790fc70b3.PNG)
+
+You can test the project here http://goo.gl/c6i7Lb
